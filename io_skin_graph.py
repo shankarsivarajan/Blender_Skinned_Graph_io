@@ -1,10 +1,10 @@
 bl_info = {
-  "name": "Import skinned graph",
+  "name": "Skinned graph",
   "author": "Shankar Sivarajan",
   "blender": (2,92,0),
   "version": (1,0, 0),
   "location": "File > Import-Export",
-  "description": "Import graphs with skin modifier",
+  "description": "Import-Export graphs with skin modifier",
   "category": "Import-Export",
 }
 
