@@ -1,4 +1,5 @@
-# Blender_Skinned_Graph_io
+# Import-Export Skinned Graphs
+
 Import/Export Graphs with [Skin Modifier](
 https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/skin.html) for Blender
 
