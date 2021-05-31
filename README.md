@@ -22,4 +22,4 @@ The .npz file contains the following arrays:
 - `edges`, 2-tuples of integers, the edges.
 - `skin_radii`, 2-tuples of floats, the radii along the x and y axes for each vertex.
 - `skin_loose`, Booleans specifiying whether or not the vertex is marked as loose. This only affects "branch vertices", those with three or more connected edges.
-- `skin_root`, Booleans specifying whether or not the vertex is marked as root. Only one vertex will be treated as the root.
+- `skin_root`, Booleans specifying whether or not the vertex is marked as root. Only one vertex per set of connected vertices will be treated as the root.
