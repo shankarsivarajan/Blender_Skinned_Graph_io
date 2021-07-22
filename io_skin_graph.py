@@ -1,8 +1,8 @@
 bl_info = {
   "name": "Skinned graph",
   "author": "Shankar Sivarajan",
-  "blender": (2,92,0),
-  "version": (1,0, 0),
+  "blender": (2,93,0),
+  "version": (1,0, 1),
   "location": "File > Import-Export",
   "description": "Import-Export graphs with skin modifier",
   "category": "Import-Export",
@@ -25,9 +25,9 @@ class ImportGraph(bpy.types.Operator, ImportHelper):
   
     filename_ext = ".npz";
   
-    filepath = bpy.props.StringProperty(subtype="FILE_PATH")
+    filepath: bpy.props.StringProperty(subtype="FILE_PATH")
   
-    filter_glob = bpy.props.StringProperty(
+    filter_glob: bpy.props.StringProperty(
         default="*.npz",
         options={"HIDDEN"},
     )
@@ -92,7 +92,7 @@ class ExportGraph(bpy.types.Operator, ExportHelper):
   
     filename_ext = ".npz";
   
-    filter_glob = bpy.props.StringProperty(
+    filter_glob: bpy.props.StringProperty(
         default="*.npz",
         options={"HIDDEN"},
     )
