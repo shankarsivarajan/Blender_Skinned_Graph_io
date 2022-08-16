@@ -6,13 +6,13 @@ https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/skin.html)
 
 # Instructions
 
-- Download the script and install addon.
+- Download the script and install as an addon.
 
 - Create or open a .blend file containing a graph with the `Skin` modifier added, but not applied, to the top of the modifier stack. Apply any `Mirror` or `Weld` modifiers added.
 
 - *Select* the mesh and export as a .npz file.
 
-- The .npz file can be imported. Add a few levels of `Subdivision Surface` *below* the `Skin` modifier, and shade smooth using the option in the Skin Modifier panel.   
+- The .npz file can now be imported. The imported mesh has two levels of `Subdivision Surface`  applied.
 
 # File format
 

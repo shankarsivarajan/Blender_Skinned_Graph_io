@@ -1,8 +1,8 @@
 bl_info = {
   "name": "Skinned graph",
   "author": "Shankar Sivarajan",
-  "blender": (2,93,0),
-  "version": (1,0, 1),
+  "blender": (3,2,0),
+  "version": (1,0, 2),
   "location": "File > Import-Export",
   "description": "Import-Export graphs with skin modifier",
   "category": "Import-Export",
@@ -12,7 +12,7 @@ import bpy
 
 import numpy as np
 
-import os
+from pathlib import Path
 
 from bpy_extras.io_utils import ImportHelper, ExportHelper
 
@@ -57,7 +57,7 @@ class ImportGraph(bpy.types.Operator, ImportHelper):
         skin_loose = file['skin_loose']
         skin_root = file['skin_root']
           
-        name = os.path.splitext(os.path.basename(filename))[0]
+        name = Path(filename).stem
         me = bpy.data.meshes.new(name)
           
         me.from_pydata(verts, edges, [])
@@ -70,7 +70,9 @@ class ImportGraph(bpy.types.Operator, ImportHelper):
         ob.select_set(True)
           
         ob.modifiers.new("Skin", type='SKIN')
-          
+        ob.modifiers["Skin"].use_smooth_shade = True
+        bpy.ops.object.subdivision_set(level=2)
+        
         for i, vert in enumerate(ob.data.skin_vertices[0].data):
             vert.radius[0], vert.radius[1] = skin_radii[i]
             vert.use_loose = skin_loose[i]
@@ -101,7 +103,8 @@ class ExportGraph(bpy.types.Operator, ExportHelper):
 
         selected_objs = context.selected_objects
 
-        filepath = os.path.splitext(self.filepath)[0]
+        filepath = Path(self.filepath)
+        
         for ob in selected_objs:
             verts = []
             edges = []
