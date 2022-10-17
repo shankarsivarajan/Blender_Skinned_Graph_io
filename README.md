@@ -14,6 +14,8 @@ https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/skin.html)
 
 - The .npz file can now be imported. The imported mesh has two levels of `Subdivision Surface`  applied.
 
+![default_cube_skin_graph](https://user-images.githubusercontent.com/16606427/196298264-fed42b9f-ccc1-441a-a54a-98e50b6cd710.png)
+
 # File format
 
 The .npz file contains the following arrays:
